@@ -1,0 +1,7 @@
+a {b,e}
+b {a,c,e,f,g}
+c {b,d,f,g}
+d {c}
+e {a,b}
+f {b,c,g}
+g {b,c,f}

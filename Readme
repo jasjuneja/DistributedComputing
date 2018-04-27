@@ -1,0 +1,54 @@
+Prerequisite:
+    1. Apache Spark(2.3.0)
+    2. Java 8
+    3. Apache-Maven(If you want to build this project other wise I'm sending you the build package)
+
+
+Sending you the target folder with jar also, but in any case if you want to build this project you will be needing Maven for this.
+After Installing Maven type these commands.
+    1. mvn clean install
+    2. mvn package
+
+Problems:
+1.) Similarity between all pairs of document:
+
+        Input :W a-1|b-2|e-5
+               X a-3|c-4|d-5
+               Y b-6|c-7|d-8
+               Z a-9|e-10
+        Here "W" is a document and "a-1" represent a is coming one 1 time in it.
+        Output: Output is in a form of list representing the pairs.
+         [(W.Z,59), (W.X,3), (X.Z,27), (X.Y,68), (W.Y,12)]
+
+        Command to run the spark Job:
+        a. Go to the Assignment Folder.
+        b. run  spark-submit --class "SimilarPair" target/Assignment-1.0-SNAPSHOT.jar
+        c. output will be written into output/similarOutput
+
+2. K Mean clustering:
+
+        Input : Is in the form of array of numbers eg. [2,17,26....
+
+        Output : Is in the form of {M1=42.666666666666664, M2=74.42105263157895} where M1 represent the cluster.
+
+        Command to run the spark Job:
+          a. Go to the Assignment Folder.
+          b. run  spark-submit --class "Kmeans" target/Assignment-1.0-SNAPSHOT.jar x y
+          c. output will be written into output/kmeansOutput
+
+          here "x" represents Number of Cluster and "y" represents Number of Iterations.
+          eg spark-submit --class "Kmeans" target/Assignment-1.0-SNAPSHOT.jar 2 6
+
+3. Maximal Clique in a Graph:
+
+Input : Is in the form of adjacency list. a {b,e}
+                                          b {a,c,e,f,g}
+Output : Is in the form of array representing the cliques eg. [([c, g, b, f],[])]
+            empty set against an array represent a clique
+
+Command to run the spark Job:
+          a. Go to the Assignment Folder.
+          b. run  spark-submit --class "MaximalCliques" target/Assignment-1.0-SNAPSHOT.jar
+          c. output will be written into output/cliquesOutput
+
+
